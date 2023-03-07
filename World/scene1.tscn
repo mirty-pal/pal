@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://brvil0krx6ycf"]
+
+[ext_resource type="Texture2D" uid="uid://ds6no7dqieqli" path="res://pal.png" id="1_y6y0s"]
+[ext_resource type="Script" path="res://PlayerScripts/obj_player.gd" id="2_nkjqi"]
+[ext_resource type="Texture2D" uid="uid://cnskjhrspqf4k" path="res://Assets/Sprites/spr_givin.png" id="3_iplcn"]
+[ext_resource type="Texture2D" uid="uid://j273eei4f04k" path="res://Assets/Sprites/spr_waitingforsomethingtohappen.png" id="4_giyb4"]
+
+[node name="Da world" type="Node2D"]
+scale = Vector2(1.18853, 0.98944)
+
+[node name="obj_player" type="CharacterBody2D" parent="."]
+position = Vector2(228.854, 177.878)
+script = ExtResource("2_nkjqi")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="obj_player"]
+z_index = 90
+position = Vector2(-0.84137, 1.0107)
+scale = Vector2(0.453658, 0.530322)
+texture = ExtResource("1_y6y0s")
+
+[node name="SprGivin" type="Sprite2D" parent="."]
+position = Vector2(69.41, 167.845)
+scale = Vector2(0.359639, 0.245684)
+texture = ExtResource("3_iplcn")
+
+[node name="SprWaitingforsomethingtohappen" type="Sprite2D" parent="."]
+position = Vector2(125.914, 80.2115)
+scale = Vector2(0.155227, 0.14946)
+texture = ExtResource("4_giyb4")
