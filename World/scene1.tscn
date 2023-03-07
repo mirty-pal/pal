@@ -1,16 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://brvil0krx6ycf"]
+[gd_scene load_steps=6 format=3 uid="uid://brvil0krx6ycf"]
 
+[ext_resource type="Script" path="res://Assets/Scripts/Player/obj_player.gd" id="1_cah8e"]
 [ext_resource type="Texture2D" uid="uid://ds6no7dqieqli" path="res://pal.png" id="1_y6y0s"]
-[ext_resource type="Script" path="res://PlayerScripts/obj_player.gd" id="2_nkjqi"]
 [ext_resource type="Texture2D" uid="uid://cnskjhrspqf4k" path="res://Assets/Sprites/spr_givin.png" id="3_iplcn"]
 [ext_resource type="Texture2D" uid="uid://j273eei4f04k" path="res://Assets/Sprites/spr_waitingforsomethingtohappen.png" id="4_giyb4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hybn5"]
+size = Vector2(43.7515, 50.5336)
 
 [node name="Da world" type="Node2D"]
 scale = Vector2(1.18853, 0.98944)
 
 [node name="obj_player" type="CharacterBody2D" parent="."]
 position = Vector2(228.854, 177.878)
-script = ExtResource("2_nkjqi")
+script = ExtResource("1_cah8e")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="obj_player"]
@@ -18,6 +21,11 @@ z_index = 90
 position = Vector2(-0.84137, 1.0107)
 scale = Vector2(0.453658, 0.530322)
 texture = ExtResource("1_y6y0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obj_player"]
+position = Vector2(-0.841248, 1.01106)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_hybn5")
 
 [node name="SprGivin" type="Sprite2D" parent="."]
 position = Vector2(69.41, 167.845)
