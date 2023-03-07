@@ -18,6 +18,11 @@ func _physics_process(delta):
 	vspd = Input.get_axis("ui_up","ui_down");
 	velocity.x = hspd*pSpd;
 	velocity.y = vspd*pSpd;
+	
+	if(velocity.x != 0 && velocity.y != 0):
+		pSpd = 1.5;
+	else:
+		pSpd = 2;
 	print(velocity)
 	print(velocity == Vector2(0,0))
 	
