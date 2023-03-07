@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var hspd = 0;
 var vspd = 0;
+var pSpd = 2;
 var frameCounter = 0;
 var rot = true;
 # create function. called on creation.
@@ -15,8 +16,8 @@ func _physics_process(delta):
 	#Setting hspd and vspd variables as the press_check in one direction minus the other direction. Classic givin.
 	hspd = Input.get_axis("ui_left","ui_right");
 	vspd = Input.get_axis("ui_up","ui_down");
-	velocity.x = hspd;
-	velocity.y = vspd;
+	velocity.x = hspd*pSpd;
+	velocity.y = vspd*pSpd;
 	print(velocity)
 	print(velocity == Vector2(0,0))
 	
