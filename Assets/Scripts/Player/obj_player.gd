@@ -5,6 +5,7 @@ var vspd = 0;
 var pSpd = 2;
 var frameCounter = 0;
 var rot = true;
+var bullet = preload("res://Assets/Scenes/bullet.tscn")
 # create function. called on creation.
 func _ready():
 	print("Yeah, I'm a total godot cell, I'm basically going pythonic mode and giving open source vibes.");
@@ -23,20 +24,25 @@ func _physics_process(delta):
 		pSpd = 1.5;
 	else:
 		pSpd = 2;
-	print(velocity)
-	print(velocity == Vector2(0,0))
 	
 	# stupid animation I made
 	frameCounter += 1;
 	if(frameCounter == 10): frameCounter = 0; rot = !rot;
 	if(velocity != Vector2(0,0)):
 		if(rot == true):
-			rotation_degrees = 5;
+			$Sprite2D.rotation_degrees = 5;
 		else:
-			rotation_degrees = -5;
+			$Sprite2D.rotation_degrees = -5;
 	else:
-		rotation_degrees = 0;
+		$Sprite2D.rotation_degrees = 0;
 	
 	move_and_collide(velocity * 50 * delta);
 	
 	
+
+func _input(event):
+	if event.is_action_pressed("Shoot"):
+		var insBullet = bullet.instantiate()
+		insBullet.position = $Sprite2D/Gun/BulletSpawn.global_position
+		get_tree().get_root().add_child(insBullet)
+		
