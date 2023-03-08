@@ -37,6 +37,6 @@ func _physics_process(delta):
 	else:
 		rotation_degrees = 0;
 	
-	move_and_collide(velocity);
+	move_and_collide(velocity * 50 * delta);
 	
 	

@@ -24,7 +24,6 @@ texture = ExtResource("1_y6y0s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="obj_player"]
 position = Vector2(-0.841248, 1.01106)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_hybn5")
 
 [node name="SprGivin" type="Sprite2D" parent="."]
