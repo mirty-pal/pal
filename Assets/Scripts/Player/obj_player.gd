@@ -24,7 +24,11 @@ func _physics_process(delta):
 		pSpd = 1.5;
 	else:
 		pSpd = 2;
-	
+		
+	if(hspd != 0): 
+		$Sprite2D.scale.x = -1*abs($Sprite2D.scale.x)*hspd;
+		
+		
 	# stupid animation I made
 	frameCounter += 1;
 	if(frameCounter == 10): frameCounter = 0; rot = !rot;
@@ -44,5 +48,8 @@ func _input(event):
 	if event.is_action_pressed("Shoot"):
 		var insBullet = bullet.instantiate()
 		insBullet.position = $Sprite2D/Gun/BulletSpawn.global_position
+		insBullet.get_node("Watermelon").scale.x *= sign($Sprite2D.scale.x);
 		get_tree().get_root().add_child(insBullet)
+		
+		
 		
