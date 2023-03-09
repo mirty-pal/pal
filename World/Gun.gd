@@ -13,4 +13,5 @@ func _process(delta):
 	else:
 		rotation = Input.get_vector("Rotate Left", "Rotate Right", "Rotate Up", "Rotate Down").normalized().angle()
 	
-	
+	set_flip_v(global_rotation > 1.5 || global_rotation < -1.5);
+	$BulletSpawn.position.y = 300 if global_rotation > 1.5 || global_rotation < -1.5 else -200;

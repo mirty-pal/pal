@@ -24,11 +24,7 @@ func _physics_process(delta):
 	if(hspd != 0): 
 		$Sprite2D.set_flip_h(hspd>0);
 	
-	$Sprite2D/Gun.set_flip_v(get_local_mouse_position().x < 0);
-	if(get_local_mouse_position().x < 0):
-		$Sprite2D/Gun/BulletSpawn.position.y = 400;
-	else:
-		$Sprite2D/Gun/BulletSpawn.position.y = -300;
+
 		
 	# stupid animation I made
 	frameCounter += 1;
@@ -51,6 +47,7 @@ func _input(event):
 		var insBullet = bullet.instantiate()
 		insBullet.position = $Sprite2D/Gun/BulletSpawn.global_position
 		insBullet.rotation = $Sprite2D/Gun.rotation
+		insBullet.get_node("Watermelon").set_flip_v($Sprite2D/Gun.flip_v)
 		get_tree().get_root().add_child(insBullet)
 		
 		

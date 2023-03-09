@@ -14,7 +14,7 @@ size = Vector2(43.7515, 50.5336)
 scale = Vector2(1.18853, 0.98944)
 
 [node name="obj_player" type="CharacterBody2D" parent="."]
-position = Vector2(226.33, 176.868)
+position = Vector2(225.489, 176.868)
 script = ExtResource("1_cah8e")
 metadata/_edit_group_ = true
 
@@ -26,7 +26,7 @@ texture = ExtResource("1_y6y0s")
 
 [node name="Gun" type="Sprite2D" parent="obj_player/Sprite2D"]
 z_index = 91
-position = Vector2(-25.9642, 15.2456)
+position = Vector2(-26, 15)
 scale = Vector2(0.0568743, 0.0486523)
 texture = ExtResource("3_l2i44")
 offset = Vector2(358.689, 78.3618)
@@ -34,12 +34,7 @@ flip_h = true
 script = ExtResource("4_ngclj")
 
 [node name="BulletSpawn" type="Node2D" parent="obj_player/Sprite2D/Gun"]
-position = Vector2(1043.49, -195.846)
-
-[node name="ColorRect" type="ColorRect" parent="obj_player/Sprite2D/Gun/BulletSpawn"]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.819608, 0, 0.109804, 1)
+position = Vector2(1043.49, -200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="obj_player"]
 position = Vector2(-0.841248, 1.01106)
