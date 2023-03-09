@@ -56,3 +56,8 @@ texture = ExtResource("3_iplcn")
 position = Vector2(125.914, 80.2115)
 scale = Vector2(0.155227, 0.14946)
 texture = ExtResource("4_giyb4")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 215.0
+offset_bottom = 1.0
+color = Color(1, 0, 1, 1)
