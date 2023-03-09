@@ -15,8 +15,8 @@ func _ready():
 func _physics_process(delta):
 	
 	#Setting hspd and vspd variables as the press_check in one direction minus the other direction. Classic givin.
-	hspd = Input.get_axis("ui_left","ui_right");
-	vspd = Input.get_axis("ui_up","ui_down");
+	hspd = Input.get_axis("Move Left","Move Right");
+	vspd = Input.get_axis("Move Up","Move Down");
 	velocity.x = hspd*pSpd;
 	velocity.y = vspd*pSpd;
 	
