@@ -1,6 +1,6 @@
 extends Node2D
 var scene = preload("res://Battle System/Battlebase.tscn")
-var tempy = false;
+var tempy = true;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if(tempy):
