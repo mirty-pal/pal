@@ -9,7 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	move_and_collide(Vector2(sign($Watermelon.scale.x)* -400 * delta, 0))
+	move_and_collide(Vector2(400 * delta, 0).rotated(rotation))
 	
 
 func _on_screen_exited():

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://brvil0krx6ycf"]
+[gd_scene load_steps=8 format=3 uid="uid://brvil0krx6ycf"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Player/obj_player.gd" id="1_cah8e"]
 [ext_resource type="Texture2D" uid="uid://ds6no7dqieqli" path="res://pal.png" id="1_y6y0s"]
 [ext_resource type="Texture2D" uid="uid://cnskjhrspqf4k" path="res://Assets/Sprites/spr_givin.png" id="3_iplcn"]
 [ext_resource type="Texture2D" uid="uid://wciqad0djpe4" path="res://gun.png" id="3_l2i44"]
 [ext_resource type="Texture2D" uid="uid://j273eei4f04k" path="res://Assets/Sprites/spr_waitingforsomethingtohappen.png" id="4_giyb4"]
+[ext_resource type="Script" path="res://World/Gun.gd" id="4_ngclj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hybn5"]
 size = Vector2(43.7515, 50.5336)
@@ -25,12 +26,14 @@ texture = ExtResource("1_y6y0s")
 
 [node name="Gun" type="Sprite2D" parent="obj_player/Sprite2D"]
 z_index = 91
-position = Vector2(-46.3658, 19.0584)
+position = Vector2(-27.8203, 19.0581)
 scale = Vector2(0.0568743, 0.0486523)
 texture = ExtResource("3_l2i44")
+flip_h = true
+script = ExtResource("4_ngclj")
 
 [node name="BulletSpawn" type="Node2D" parent="obj_player/Sprite2D/Gun"]
-position = Vector2(-684.806, -313.385)
+position = Vector2(684.795, -313.383)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="obj_player"]
 position = Vector2(-0.841248, 1.01106)

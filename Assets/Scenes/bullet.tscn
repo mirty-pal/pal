@@ -8,6 +8,8 @@ radius = 3.13
 
 [node name="Bullet" type="CharacterBody2D"]
 z_index = 90
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_tqys6")
 
 [node name="Watermelon" type="Sprite2D" parent="."]
