@@ -12,3 +12,5 @@ func _process(delta):
 		look_at(get_global_mouse_position())
 	else:
 		rotation = Input.get_vector("Rotate Left", "Rotate Right", "Rotate Up", "Rotate Down").normalized().angle()
+	
+	

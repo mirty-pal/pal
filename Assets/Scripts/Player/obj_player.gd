@@ -23,7 +23,12 @@ func _physics_process(delta):
 	
 	if(hspd != 0): 
 		$Sprite2D.set_flip_h(hspd>0);
-		
+	
+	$Sprite2D/Gun.set_flip_v(get_local_mouse_position().x < 0);
+	if(get_local_mouse_position().x < 0):
+		$Sprite2D/Gun/BulletSpawn.position.y = 400;
+	else:
+		$Sprite2D/Gun/BulletSpawn.position.y = -300;
 		
 	# stupid animation I made
 	frameCounter += 1;
@@ -35,6 +40,7 @@ func _physics_process(delta):
 			$Sprite2D.rotation_degrees = -5;
 	else:
 		$Sprite2D.rotation_degrees = 0;
+	
 	
 	move_and_collide(velocity * 50 * delta);
 	
