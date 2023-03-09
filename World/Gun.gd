@@ -8,4 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	look_at(get_global_mouse_position())
+	if Input.get_vector("Rotate Left", "Rotate Right", "Rotate Up", "Rotate Down").normalized() == Vector2.ZERO:
+		look_at(get_global_mouse_position())
+	else:
+		rotation = Input.get_vector("Rotate Left", "Rotate Right", "Rotate Up", "Rotate Down").normalized().angle()

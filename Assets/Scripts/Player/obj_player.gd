@@ -17,14 +17,10 @@ func _physics_process(delta):
 	#Setting hspd and vspd variables as the press_check in one direction minus the other direction. Classic givin.
 	hspd = Input.get_axis("Move Left","Move Right");
 	vspd = Input.get_axis("Move Up","Move Down");
-	velocity.x = hspd*pSpd;
-	velocity.y = vspd*pSpd;
+	velocity = Vector2(hspd, vspd).normalized() * pSpd
+
+
 	
-	if(velocity.x != 0 && velocity.y != 0):
-		pSpd = 1.5;
-	else:
-		pSpd = 2;
-		
 	if(hspd != 0): 
 		$Sprite2D.set_flip_h(hspd>0);
 		
