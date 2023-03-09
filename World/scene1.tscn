@@ -26,9 +26,10 @@ texture = ExtResource("1_y6y0s")
 
 [node name="Gun" type="Sprite2D" parent="obj_player/Sprite2D"]
 z_index = 91
-position = Vector2(-27.8203, 19.0581)
+position = Vector2(-25.9642, 15.2456)
 scale = Vector2(0.0568743, 0.0486523)
 texture = ExtResource("3_l2i44")
+offset = Vector2(358.689, 78.3618)
 flip_h = true
 script = ExtResource("4_ngclj")
 
