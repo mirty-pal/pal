@@ -10,7 +10,7 @@ func _physics_process(delta):
 	vspd = Input.get_axis("Move Up","Move Down");
 	velocity = Vector2(hspd, vspd).normalized() * pSpd * 50;
 	move_and_slide();
-
+	
 	if velocity.x > 0:
 		$AnimatedSprite2D.scale.x = 1
 	elif velocity.x < 0:
