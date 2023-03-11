@@ -6,6 +6,8 @@ func _ready():
 	print("I AM LOADED BITCH");
 	print(get_viewport_rect().size);
 	print(position)
+	var givin = Dialogic.start("pals_timeline");
+	add_child(givin);
 	
 
 
