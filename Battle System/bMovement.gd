@@ -10,15 +10,21 @@ func _physics_process(_delta):
 	else:
 		movX = 0;
 		movY = 0;
-	print("Position: " + str(position));
-	print("Target: " + str(target))
-	print("Velocity X: " + str(velocity.x))
-	print("Velocity Y: " + str(velocity.y))
-	print("movX: " + str(movX))
+	
+	#set target and move dude towards it
 	if(movX != 0 || movY != 0):
-		target = Vector2(position.x+(36*movX),position.y+(48*movY));
-		velocity.x = sign(movX)*12;
-		velocity.y = sign(movY)*12;
+		target = Vector2(position.x+(42*movX),position.y+(42*movY));
+		velocity.x = sign(movX);
+		velocity.y = sign(movY);
+		velocity = 6*velocity.normalized();
+		
+		
+	#approximate float numbers 
+	var pX = abs((target.x - position.x)/position.x);
+	var pY = abs((target.y - position.y)/position.y);
+	print("pX: " + str(pX));
+	print("pY: " + str(pY));
+	
 	if(position == target):
 		velocity = Vector2(0,0);
 	move_and_collide(velocity);

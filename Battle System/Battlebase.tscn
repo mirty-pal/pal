@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cqjrnutmuyo4c"]
 
 [ext_resource type="Script" path="res://Battle System/btl_layout.gd" id="1_xcglu"]
-[ext_resource type="Texture2D" uid="uid://cnroccovutgma" path="res://Assets/Sprites/spr_battlegrid.png" id="2_j7ub1"]
+[ext_resource type="Texture2D" uid="uid://bxrnvkrsgg1py" path="res://Assets/Sprites/spr_grid.png" id="2_e6c5n"]
 [ext_resource type="Script" path="res://Battle System/bMovement.gd" id="3_0fbw1"]
 [ext_resource type="Texture2D" uid="uid://w2fx81p8fdlb" path="res://Battle System/spr_bcursor.png" id="4_hlulc"]
 
@@ -11,7 +11,7 @@ script = ExtResource("1_xcglu")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(160, 120)
-texture = ExtResource("2_j7ub1")
+texture = ExtResource("2_e6c5n")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(160, 120)
@@ -21,5 +21,5 @@ script = ExtResource("3_0fbw1")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture_filter = 1
-position = Vector2(160, 213)
+position = Vector2(159, 191)
 texture = ExtResource("4_hlulc")
