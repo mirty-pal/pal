@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cqjrnutmuyo4c"]
+[gd_scene load_steps=20 format=3 uid="uid://cqjrnutmuyo4c"]
 
 [ext_resource type="Script" path="res://Battle System/btl_layout.gd" id="1_xcglu"]
 [ext_resource type="Texture2D" uid="uid://bxrnvkrsgg1py" path="res://Assets/Sprites/spr_grid.png" id="2_e6c5n"]
@@ -179,6 +179,8 @@ size = Vector2(12.5, 206)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6o7k"]
 size = Vector2(234, 11)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqccw"]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_xcglu")
 
@@ -235,3 +237,6 @@ metadata/_edit_group_ = true
 position = Vector2(0, 1)
 scale = Vector2(0.197917, 0.197917)
 texture = ExtResource("5_sf1o4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="looktest"]
+shape = SubResource("RectangleShape2D_jqccw")

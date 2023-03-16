@@ -19,14 +19,16 @@ func _physics_process(delta):
 	hspd = Input.get_axis("Move Left","Move Right");
 	vspd = Input.get_axis("Move Up","Move Down");
 	shiftKey = Input.is_key_pressed(KEY_SHIFT);
-	velocity = Vector2(hspd, vspd).normalized()*pSpd;
-	move_and_collide(velocity * 50 * delta);
+	velocity = Vector2(hspd, vspd).normalized()*pSpd*45;
+	move_and_slide();
 	
 	#Triangle math:
 	print(Targetpos.position.x)
 	var xDiff = position.x - Targetpos.position.x;
 	var yDiff = position.y - Targetpos.position.y;
-	var relAngle = floor((atan2(yDiff,xDiff)*(180/PI))/22.5)
+	
+	var relAngle = floor((atan2(yDiff,xDiff)*(180/PI))/22.5);
+	
 	var turnVal = floor(relAngle/60);
 	print("angle: " + str(relAngle))
 	
