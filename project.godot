@@ -15,10 +15,6 @@ run/main_scene="res://World/scene1.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
-
 [dialogic]
 
 editor/character_preview_mode=0
@@ -56,10 +52,6 @@ window/size/viewport_height=240
 window/size/window_width_override=1280
 window/size/window_height_override=960
 window/stretch/mode="viewport"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [importer_defaults]
 
