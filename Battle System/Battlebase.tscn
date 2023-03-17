@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://cqjrnutmuyo4c"]
+[gd_scene load_steps=21 format=3 uid="uid://cqjrnutmuyo4c"]
 
 [ext_resource type="Script" path="res://Battle System/btl_layout.gd" id="1_xcglu"]
 [ext_resource type="Texture2D" uid="uid://bxrnvkrsgg1py" path="res://Assets/Sprites/spr_grid.png" id="2_e6c5n"]
 [ext_resource type="Script" path="res://Battle System/bMovement.gd" id="3_0fbw1"]
 [ext_resource type="Texture2D" uid="uid://d4dk84j8yacpp" path="res://Assets/Sprites/ness sprite.png" id="4_jyyjt"]
+[ext_resource type="Script" path="res://Battle System/looktest.gd" id="5_24nrg"]
 [ext_resource type="Texture2D" uid="uid://ds6no7dqieqli" path="res://pal.png" id="5_sf1o4"]
 
 [sub_resource type="Animation" id="Animation_8186h"]
@@ -192,22 +193,24 @@ texture = ExtResource("2_e6c5n")
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(160, 120)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(187, 159)
+motion_mode = 1
 script = ExtResource("3_0fbw1")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture_filter = 1
 texture = ExtResource("4_jyyjt")
 hframes = 17
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 libraries = {
 "": SubResource("AnimationLibrary_v100a")
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_6odja")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
@@ -231,6 +234,9 @@ shape = SubResource("RectangleShape2D_thmix")
 
 [node name="looktest" type="CharacterBody2D" parent="."]
 position = Vector2(161, 107)
+collision_layer = 0
+motion_mode = 1
+script = ExtResource("5_24nrg")
 metadata/_edit_group_ = true
 
 [node name="palsp" type="Sprite2D" parent="looktest"]
@@ -240,3 +246,9 @@ texture = ExtResource("5_sf1o4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="looktest"]
 shape = SubResource("RectangleShape2D_jqccw")
+
+[node name="Timer" type="Timer" parent="looktest"]
+process_callback = 0
+autostart = true
+
+[connection signal="timeout" from="looktest/Timer" to="looktest" method="_on_timer_timeout"]

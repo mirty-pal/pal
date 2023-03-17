@@ -9,14 +9,14 @@ var pDir = 2;
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	hSpd = Input.get_axis("Move Left","Move Right");
 	vSpd = Input.get_axis("Move Up","Move Down");
 	velocity = Vector2(hSpd, vSpd).normalized() * pSpd * 50;
 	move_and_slide();
 
 
-func _process(delta):
+func _process(_delta):
 	if velocity.x < 0:
 		$Sprite2D.scale.x = -1;
 		pDir = 0;

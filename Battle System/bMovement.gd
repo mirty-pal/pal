@@ -11,11 +11,10 @@ var DebugLine;
 var points;
 var counter = 0;
 func _ready():
-	print(spriteArr[1][1]);
 	$AnimationPlayer.speed_scale = 2;
 	Targetpos = get_node("/root/Node2D/looktest");
 	DebugLine = get_node("/root/Node2D/Line2D");
-func _physics_process(delta):
+func _physics_process(_delta):
 	hspd = Input.get_axis("Move Left","Move Right");
 	vspd = Input.get_axis("Move Up","Move Down");
 	shiftKey = Input.is_key_pressed(KEY_SHIFT);
@@ -23,17 +22,15 @@ func _physics_process(delta):
 	move_and_slide();
 	
 	#Triangle math:
-	print(Targetpos.position.x)
 	var xDiff = position.x - Targetpos.position.x;
 	var yDiff = position.y - Targetpos.position.y;
 	
 	var relAngle = floor((atan2(yDiff,xDiff)*(180/PI))/22.5);
 	
 	var turnVal = floor(relAngle/60);
-	print("angle: " + str(relAngle))
+
 	
-	
-	print("turn: " + str(relAngle))
+
 	if(!shiftKey):
 		if(velocity != Vector2.ZERO):
 			$AnimationPlayer.play(spriteArr[hspd+1][vspd+1]);
