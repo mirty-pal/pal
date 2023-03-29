@@ -14,6 +14,7 @@ func _ready():
 	$AnimationPlayer.speed_scale = 2;
 	Targetpos = get_node("/root/Node2D/looktest");
 	DebugLine = get_node("/root/Node2D/Line2D");
+	print("poopin");
 func _physics_process(_delta):
 	hspd = Input.get_axis("Move Left","Move Right");
 	vspd = Input.get_axis("Move Up","Move Down");
@@ -27,9 +28,8 @@ func _physics_process(_delta):
 	
 	var relAngle = floor((atan2(yDiff,xDiff)*(180/PI))/22.5);
 	
-	var turnVal = floor(relAngle/60);
-
 	
+	var turnVal = floor(relAngle/60);
 
 	if(!shiftKey):
 		if(velocity != Vector2.ZERO):

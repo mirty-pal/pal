@@ -6,3 +6,12 @@ func _ready():
 	print("I AM LOADED BITCH");
 	print(get_viewport_rect().size);
 	print(position)
+	var resource = load("res://Dialogue/firstDialogue.dialogue");
+	var line = await(DialogueManager.get_next_dialogue_line(resource))
+	var balloon = preload("res://addons/dialogue_manager/example_balloon/example_balloon.tscn");
+	balloon.dialogue = line;
+	add_child(balloon);
+	
+	
+	
+	
